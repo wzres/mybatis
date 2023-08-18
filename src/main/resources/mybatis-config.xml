@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <settings>
+        <!--开启驼峰命名自动映射-->
+        <setting name="mapUnderscoreToCamelCase" value="true"/>
+    </settings>
+    <typeAliases>
+        <!--别名机制(针对查询语句)-->
+        <!--<package name="com.wzres."/>-->
+    </typeAliases>
+    <environments default="development">
+        <environment id="development">
+            <transactionManager type="JDBC"/>
+            <dataSource type="POOLED">
+                <property name="driver" value="com.mysql.cj.jdbc.Driver"/>
+                <property name="url" value="jdbc:mysql://localhost:3306/wzdemo"/>
+                <property name="username" value="root"/>
+                <property name="password" value="9780619"/>
+            </dataSource>
+        </environment>
+    </environments>
+    <mappers>
+        <!--sql映射文件创建好之后，需要将该文件路径配置到这里-->
+        <!--<mapper resource=".xml"/>-->
+        <!--sql映射文件必须和接口放在一个包。并且名字一致。-->
+        <package name="com.wzres.mapper"/>
+    </mappers>
+</configuration>
